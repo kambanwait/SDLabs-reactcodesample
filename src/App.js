@@ -3,9 +3,15 @@ import { hot } from "react-hot-loader";
 
 require('./mystyles.scss');
 
+import Navigation from './components/navigation';
+
 class App extends Component {
   render() {
-    return (<h1 className="title">SDLabs ReaectJs code test</h1>);
+    return (
+      <React.Fragment>
+        <Navigation />
+      </React.Fragment>
+    );
   }
 }
 
