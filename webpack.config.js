@@ -1,4 +1,5 @@
 const path = require("path");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
@@ -15,8 +16,14 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader',
+            'sass-loader'
+          ]
+        })
       }
     ]
   },
@@ -24,7 +31,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist/"),
     publicPath: "/dist/",
-    filename: "bundle.js"
+    filename: "js/bundle.js"
   },
   devServer: {
     contentBase: path.join(__dirname, "public/"),
@@ -32,5 +39,8 @@ module.exports = {
     publicPath: "http://localhost:3000/dist/",
     hotOnly: true
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [
+    new ExtractTextPlugin('css/mystyles.css'),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };
