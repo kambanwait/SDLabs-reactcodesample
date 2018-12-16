@@ -1,18 +1,39 @@
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
 
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 require('./mystyles.scss');
 
 import Navigation from './components/Navigation';
-import Recipes from './components/Recipes';
+import Home from './pages/Home';
+import Admin from './pages/Admin';
+import Error from './pages/Error';
 
 class App extends Component {
+  state = {
+    recipes: []
+  };
+
+  componentDidMount() {
+    fetch('./recipes.json')
+      .then(response => response.json())
+      .then(response => this.setState({ recipes: response }))
+      .catch(error => console.error("error"));
+  }
+
   render() {
     return (
-      <React.Fragment>
-        <Navigation />
-        <Recipes />
-      </React.Fragment>
+      <BrowserRouter>
+        <div>
+          <Navigation />
+          <Switch>
+            <Route path="/" component={Home} exact />
+            <Route path="/admin" component={Admin} />
+            <Route component={Error} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }

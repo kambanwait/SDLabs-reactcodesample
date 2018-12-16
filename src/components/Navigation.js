@@ -1,12 +1,15 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item" href="/"><h1 className="title is-1">Recipe box</h1></a>
-        <a className="navbar-item">Home</a>
-        <a className="navbar-item">Admin</a>
+        <h1 className="title is-1">Recipe box</h1>
+
+        <NavLink className="navbar-item" to="/">Home</NavLink>
+        <NavLink className="navbar-item" to="/admin">About</NavLink>
+
       </div>
     </nav>
   );
