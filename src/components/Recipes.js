@@ -7,9 +7,9 @@ class Recipes extends Component {
     return (
       <section>
         {/* Loops through recipes array and pass data to component */}
-        <Recipe title="Recipe title 1" />
-        <Recipe title="Recipe title 2" />
-        <Recipe title="Recipe title 3" />
+        <Recipe name="Recipe title 1" />
+        <Recipe name="Recipe title 2" />
+        <Recipe name="Recipe title 3" />
       </section>
     );
   }
