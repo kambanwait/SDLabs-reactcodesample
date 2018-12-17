@@ -18,7 +18,7 @@ class NewRecipe extends Component {
   state = { ...initialState } // set state to empty initialstate with new ID
 
   onChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({ ...this.state, [event.target.name]: event.target.value });
   };
 
   handleSubmit = event => {
