@@ -5,7 +5,7 @@ import Recipes from '../components/Recipes';
 const Home = () => {
   return (
     <React.Fragment>
-      <h3 className="title is-3">Home</h3>
+      <h2 className="title is-2">Home</h2>
       <Recipes />
     </React.Fragment>
   );
