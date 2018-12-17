@@ -11,13 +11,9 @@ export function fetchRecipes() {
   }
 }
 
-export function createRecipe() {
-  return function (dispatch) {
-    fetch('./recipes.json')
-      .then(response => response.json())
-      .then(recipe => dispatch({
-        type: NEW_RECIPES,
-        payload: recipe
-      }));
-  }
+export function createRecipe(state) {
+  return {
+    type: NEW_RECIPE,
+    payload: state
+  };
 }
