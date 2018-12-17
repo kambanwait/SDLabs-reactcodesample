@@ -30,32 +30,32 @@ class NewRecipe extends Component {
           <div className="field">
             <label className="label">Recipe Name</label>
             <div className="control">
-              <input className="input" type="text" placeholder="Recipe name" name="name" onChange={this.onChange} />
+              <input className="input" type="text" placeholder="Recipe name" name="name" onChange={this.onChange} value={this.state.name} />
             </div>
           </div>
 
           <div className="field">
             <label className="label">Description:</label>
             <div className="control">
-              <input className="input" type="text" placeholder="Description" name="description" onChange={this.onChange} />
+              <input className="input" type="text" placeholder="Description" name="description" onChange={this.onChange} value={this.state.description} />
             </div>
           </div>
 
           <div className="field">
             <label className="label">Ingredients:</label>
             <div className="control">
-              <textarea className="textarea" placeholder="Ingredients" name="ingredients" onChange={this.onChange}></textarea>
+              <textarea className="textarea" placeholder="Ingredients" name="ingredients" onChange={this.onChange} value={this.state.ingredients} ></textarea>
             </div>
           </div>
 
           <div className="field">
             <label className="label">Steps:</label>
             <div className="control">
-              <textarea className="textarea" placeholder="Steps" name="steps" onChange={this.onChange}></textarea>
+              <textarea className="textarea" placeholder="Steps" name="steps" onChange={this.onChange} value={this.state.steps} ></textarea>
             </div>
           </div>
 
-          <button type="submit" className="button" >Add new recipe</button>
+          <button disabled={!this.state.steps} type="submit" className="button" >Add new recipe</button>
         </form>
       </section>
     );
