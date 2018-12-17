@@ -1,4 +1,4 @@
-import { FETCH_RECIPES, NEW_RECIPE } from '../actions/types';
+import { FETCH_RECIPES, NEW_RECIPE, REMOVE_RECIPE } from '../actions/types';
 
 const initialState = {
   items: [],
@@ -12,6 +12,17 @@ export default function (state = initialState, action) {
         ...state,
         items: action.payload
       }
+
+    case NEW_RECIPE:
+      return {
+        ...state,
+        item: action.payload
+      }
+
+    case REMOVE_RECIPE:
+      const firstRecipe = state.indexOf(action.payload)
+      return state.filter((item, index) => index != firstRecipe)
+
     default:
       return state;
   }
