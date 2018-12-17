@@ -3,18 +3,14 @@ import React from "react";
 const Recipe = props => {
   return (
     <div>
-      {/* title */}
-      <h4 className="title is-4">{props.name}</h4>
+      {/* name */}
+      <h4 className="title is-4">{props.recipe.name}</h4>
       {/* description */}
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>{props.recipe.description}</p>
       {/* ingredients */}
-      <ul>
-        <li></li>
-      </ul>
+      <p>{props.recipe.ingredients}</p>
       {/* steps */}
-      <ol>
-        <li></li>
-      </ol>
+      <p>{props.recipe.steps}</p>
     </div>
   )
 };
