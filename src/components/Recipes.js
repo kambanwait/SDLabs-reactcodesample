@@ -8,7 +8,13 @@ import Recipe from './Recipe'
 class Recipes extends Component {
   componentWillMount() {
     this.props.fetchRecipes();
-  };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.newRecipe) {
+      this.props.recipes.unshift(nextProps.newRecipe);
+    }
+  }
 
   render() {
     return (
