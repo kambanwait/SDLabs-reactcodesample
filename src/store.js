@@ -5,7 +5,7 @@ import rootReducer from './reducers';
 import { loadState, saveState } from './localStorage';
 
 // Check localstate for existing recipes. If none, we set initial state to empty & load in from json
-const initialState = loadState() ? loadState() : {}
+const initialState = loadState();
 
 const middleware = [thunk];
 
@@ -22,6 +22,6 @@ store.subscribe(() => {
   saveState({
     recipes: store.getState().recipes
   });
-})
+});
 
 export default store;
