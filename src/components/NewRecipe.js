@@ -3,15 +3,19 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createRecipe } from '../actions/recipeActions';
+const uuidv4 = require('uuid/v4')
 
+const initialState = {
+  id: uuidv4(),
+  name: '',
+  description: '',
+  ingredients: '',
+  steps: ''
+};
 
 class NewRecipe extends Component {
-  state = {
-    name: '',
-    description: '',
-    ingredients: '',
-    steps: ''
-  };
+
+  state = { ...initialState } // set state to empty initialstate with new ID
 
   onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -20,6 +24,14 @@ class NewRecipe extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.createRecipe(this.state);
+
+    // clear state
+    this.setState(initialState);
+    // generate new UUID for next recipe
+    this.setState({
+      id: uuidv4()
+    });
+
   };
 
   render() {
