@@ -62,4 +62,8 @@ class NewRecipe extends Component {
   }
 }
 
+NewRecipe.propTypes = {
+  createRecipe: PropTypes.func.isRequired,
+}
+
 export default connect(null, { createRecipe })(NewRecipe);
