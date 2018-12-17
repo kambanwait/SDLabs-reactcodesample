@@ -2,12 +2,17 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchRecipes } from '../actions/recipeActions';
+import { loadState } from '../localStorage';
 
 import Recipe from './Recipe'
 
 class Recipes extends Component {
-  componentWillMount() {
-    this.props.fetchRecipes();
+  componentDidMount() {
+    if (!loadState()) {
+      this.props.fetchRecipes();
+    } else {
+      this.props.loadState;
+    }
   }
 
   componentWillReceiveProps(nextProps) {

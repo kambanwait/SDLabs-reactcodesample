@@ -1,3 +1,4 @@
+// check local storage for data
 export const loadState = () => {
   try {
     const serializedState = localStorage.getItem('recipes');
@@ -10,6 +11,7 @@ export const loadState = () => {
   }
 }
 
+// save current state to localstorage
 export const saveState = (state) => {
   try {
     const serializedState = JSON.stringify(state);
