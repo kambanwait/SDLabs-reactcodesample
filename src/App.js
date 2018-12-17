@@ -3,6 +3,9 @@ import { hot } from "react-hot-loader";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
+import { Provider } from "react-redux";
+import store from './store';
+
 require('./mystyles.scss');
 
 import Navigation from './components/Navigation';
@@ -11,29 +14,20 @@ import Admin from './pages/Admin';
 import Error from './pages/Error';
 
 class App extends Component {
-  state = {
-    recipes: []
-  };
-
-  componentDidMount() {
-    fetch('./recipes.json')
-      .then(response => response.json())
-      .then(response => this.setState({ recipes: response }))
-      .catch(error => console.error("error"));
-  }
-
   render() {
     return (
-      <BrowserRouter>
-        <div>
-          <Navigation />
-          <Switch>
-            <Route path="/" component={Home} exact />
-            <Route path="/admin" component={Admin} />
-            <Route component={Error} />
-          </Switch>
-        </div>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <div>
+            <Navigation />
+            <Switch>
+              <Route path="/" component={Home} exact />
+              <Route path="/admin" component={Admin} />
+              <Route component={Error} />
+            </Switch>
+          </div>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
