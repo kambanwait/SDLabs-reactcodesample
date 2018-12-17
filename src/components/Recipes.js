@@ -7,17 +7,12 @@ import { loadState } from '../localStorage';
 import Recipe from './Recipe'
 
 class Recipes extends Component {
+
   componentDidMount() {
     if (!loadState()) {
       this.props.fetchRecipes();
     } else {
       this.props.loadState;
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.newRecipe) {
-      this.props.recipes.unshift(nextProps.newRecipe);
     }
   }
 
@@ -39,8 +34,7 @@ Recipes.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  recipes: state.recipes.items,
-  newRecipe: state.recipes.item
+  recipes: state.recipes.recipes
 });
 
 export default connect(mapStateToProps, { fetchRecipes })(Recipes);
