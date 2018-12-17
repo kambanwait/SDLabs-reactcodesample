@@ -1,4 +1,4 @@
-import { FETCH_RECIPES, NEW_RECIPE } from './types';
+import { FETCH_RECIPES, NEW_RECIPE, REMOVE_RECIPE } from './types';
 
 export function fetchRecipes() {
   return function (dispatch) {
