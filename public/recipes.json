@@ -1,8 +1,9 @@
 [
   {
+    "id": 1,
     "name": "Crock Pot Roast",
     "description": "Officiis nulla et et molestiae magni error reprehenderit. Voluptas iure ipsum cum eligendi. Aspernatur soluta amet voluptatum iusto sed quibusdam aut saepe.",
-    "ingredients": "1 beef roast Meat/ 1 package brown gravy mix/ 1 package dried Italian salad dressing mix/ 1 package dry ranch dressing mix /1\/2 cup water",
+    "ingredients": "1 beef roast Meat \n 1 package brown gravy mix \n 1 package dried Italian salad dressing mix\n 1 package dry ranch dressing mix\n 1/2 cup water",
     "steps": [
       "Place beef roast in crock pot.",
       "Mix the dried mixes together in a bowl and sprinkle over the roast.",
@@ -12,9 +13,10 @@
     "imageURL": "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/27/20/8/picVfzLZo.jpg"
   },
   {
+    "id": 2,
     "name": "Roasted Asparagus",
     "description": "Laborum deleniti quo amet quam. Esse ex voluptas esse id culpa doloremque. Ratione voluptatum sunt illum et earum illum temporibus. Praesentium nisi illo quisquam qui eius. Est aut ut nisi reiciendis saepe dolorem tempora commodi. Exercitationem modi voluptatem recusandae aliquam sunt quia et.",
-    "ingredients": "1 lb asparagus/1 1/2 tbsp olive oil/ 1/2 tsp kosher salt Baking",
+    "ingredients": "1 lb asparagus\n 1/2 tbsp olive oil\n 1/2 tsp kosher salt Baking",
     "steps": [
       "Preheat oven to 425°F.",
       "Cut off the woody bottom part of the asparagus spears and discard.",
@@ -30,6 +32,7 @@
     "imageURL": "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/50/84/7/picMcSyVd.jpg"
   },
   {
+    "id": 3,
     "name": "Curried Lentils and Rice",
     "description": "Dolore in aut est dolor. Ut iusto dolorem iure asperiores ut corporis distinctio. Tempore necessitatibus placeat fuga deleniti fugiat aliquam cum. Commodi voluptas id eligendi ut sit est corporis et. Atque blanditiis odit impedit est reprehenderit sed.",
     "ingredients": "1 quart beef broth/ 1 cup dried green lentils/ 1/2 cup basmati rice/ 1 tsp curry powder/ 1 tsp salt",
@@ -43,9 +46,10 @@
     "imageURL": "http://dagzhsfg97k4.cloudfront.net/wp-content/uploads/2012/05/lentils3.jpg"
   },
   {
+    "id": 4,
     "name": "Big Night Pizza",
     "description": "Rerum reprehenderit iusto amet dolorem omnis voluptates non. Ex quos a enim incidunt dolorem repudiandae adipisci. Rerum ut voluptas dolor. Rerum ipsa et recusandae. Sapiente suscipit a qui tenetur voluptas aut. Beatae sunt est nisi sed.",
-    "ingredients": "5 teaspoons yeast/ 5 cups flour/ 4 tablespoons vegetable oil/ 2 tablespoons sugar/ 2 teaspoons salt/ 2 cups hot water/ 1/4 cup pizza sauce/ 3/4 cup mozzarella cheese",
+    "ingredients": "5 teaspoons yeast\n 5 cups flour\n 4 tablespoons vegetable oil\n 2 tablespoons sugar\n 2 teaspoons salt\n 2 cups hot water\n 1/4 cup pizza sauce\n 3/4 cup mozzarella cheese",
     "steps": [
       "Add hot water to yeast in a large bowl and let sit for 15 minutes.",
       "Mix in oil, sugar, salt, and flour and let sit for 1 hour.",
@@ -58,9 +62,10 @@
     "imageURL": "http://upload.wikimedia.org/wikipedia/commons/c/c7/Spinach_pizza.jpg"
   },
   {
+    "id": 5,
     "name": "Cranberry and Apple Stuffed Acorn Squash Recipe",
     "description": "Cumque sunt provident et voluptatem. Nesciunt delectus dolores et sed quia qui sint. Aliquam asperiores qui expedita culpa praesentium minima. Voluptates asperiores commodi voluptatem est ea labore. Nam iure qui vel hic eius porro repellendus.",
-    "ingredients": "2 acorn squash /1 boiling water/ 2 apples chopped into 1.4 inch pieces./ 1/2 cup dried cranberries/ 1 teaspoon cinnamon Baking/ 2 tablespoons melted butter",
+    "ingredients": "2 acorn squash \n1 boiling water\n 2 apples chopped into 1.4 inch pieces.\n 1/2 cup dried cranberries\n 1 teaspoon cinnamon Baking\n 2 tablespoons melted butter",
     "steps": [
       "Cut squash in half, remove seeds.",
       "Place squash in baking dish, cut-side down.",
@@ -74,9 +79,10 @@
     "imageURL": "http://elanaspantry.com/wp-content/uploads/2008/10/acorn_squash_with_cranberry.jpg"
   },
   {
+    "id": 6,
     "name": "Mic's Yorkshire Puds",
     "description": "Officiis nulla et et molestiae magni error reprehenderit. Voluptas iure ipsum cum eligendi. Aspernatur soluta amet voluptatum iusto sed quibusdam aut saepe.",
-    "ingredients": "200g plain flour/ 3 eggs/ 300ml milk / 3 tbsp vegetable oil",
+    "ingredients": "200g plain flour\n 3 eggs\n 300ml milk \n 3 tbsp vegetable oil",
     "steps": [
       "Put the flour and some seasoning into a large bowl.",
       "Stir in eggs, one at a time.",
