@@ -12,8 +12,10 @@ export function fetchRecipes() {
 }
 
 export function createRecipe(state) {
-  return {
-    type: NEW_RECIPE,
-    payload: state
-  };
+  return function (dispatch) {
+    dispatch({
+      type: NEW_RECIPE,
+      payload: state
+    });
+  }
 }
