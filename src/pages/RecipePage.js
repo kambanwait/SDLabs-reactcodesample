@@ -19,7 +19,7 @@ class RecipePage extends Component {
           <h2 className="subtitle">
             {this.props.singleRecipe.description}
           </h2>
-          <img src={this.props.singleRecipe.imageURL} />
+          <img src={this.props.singleRecipe.imageURL || 'https://bulma.io/images/placeholders/128x128.png'} alt="Placeholder image" />
           <br />
           <hr />
 
