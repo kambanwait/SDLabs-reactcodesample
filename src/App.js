@@ -9,6 +9,7 @@ import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
+import RecipePage from './pages/RecipePage';
 import Error from './pages/Error';
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
           <section className="section">
             <Switch>
               <Route path="/" component={Home} exact showAdmin={false} />
+              <Route path='/recipe/:recipe' component={RecipePage} showAdmin={false} />
               <Route path="/admin" component={props => <Admin {...props} showAdmin="true" />} />
               <Route component={Error} />
             </Switch>
