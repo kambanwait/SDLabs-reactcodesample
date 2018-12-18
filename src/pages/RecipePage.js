@@ -24,11 +24,11 @@ class RecipePage extends Component {
           <hr />
 
           <h3 className="title is-3">Ingredients</h3>
-          <p>{this.props.singleRecipe.ingredients}</p>
+          <p className="break-new-line">{this.props.singleRecipe.ingredients}</p>
           <br />
 
           <h3 className="title is-3">Steps</h3>
-          <p>{this.props.singleRecipe.steps}</p>
+          <p className="break-new-line">{this.props.singleRecipe.steps}</p>
         </div>
       </div>
     );
