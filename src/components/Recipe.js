@@ -6,12 +6,17 @@ const Recipe = props => {
   return (
     <div>
       {/* name */}
-      <h4 className="title is-4">{props.recipe.name}</h4>
+      <h3 className="title is-3">{props.recipe.name}</h3>
       {/* description */}
+      <h5 className="title is-5">Description</h5>
       <p>{props.recipe.description}</p>
+      <br />
       {/* ingredients */}
+      <h5 className="title is-5">Ingredients</h5>
       <p>{props.recipe.ingredients}</p>
+      <br />
       {/* steps */}
+      <h5 className="title is-5">Steps</h5>
       <p>{props.recipe.steps}</p>
       {/* only show this if we're on admin page */}
       <br />
