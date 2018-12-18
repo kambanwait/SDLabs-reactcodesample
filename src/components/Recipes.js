@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchRecipes, removeRecipe, editRecipe } from '../actions/recipeActions';
+import { fetchRecipes } from '../actions/recipeActions';
 import { loadState } from '../localStorage';
 
 import Recipe from './Recipe'
@@ -26,8 +26,6 @@ class Recipes extends Component {
               recipe={recipe}
               index={index}
               key={index}
-              removeRecipe={this.props.removeRecipe}
-              editRecipe={this.props.editRecipe}
               showAdmin={this.props.showAdmin}
             />
           ))
@@ -39,8 +37,6 @@ class Recipes extends Component {
 
 Recipes.propTypes = {
   fetchRecipes: PropTypes.func.isRequired,
-  removeRecipe: PropTypes.func.isRequired,
-  editRecipe: PropTypes.func.isRequired,
   recipes: PropTypes.array.isRequired
 }
 
@@ -48,4 +44,4 @@ const mapStateToProps = state => ({
   recipes: state.recipes.recipes
 });
 
-export default connect(mapStateToProps, { fetchRecipes, removeRecipe, editRecipe })(Recipes);
+export default connect(mapStateToProps, { fetchRecipes })(Recipes);

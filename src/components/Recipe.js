@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { updateRecipe } from '../actions/recipeActions';
+import { updateRecipe, removeRecipe, editRecipe } from '../actions/recipeActions';
 
 import AdminControls from './AdminControls';
 import EditRecipe from './EditRecipe';
@@ -70,7 +70,8 @@ class Recipe extends Component {
         {/* only show this if we're on admin page */}
         <br />
         {/* only show admin controls when we're on admin page */}
-        {this.props.showAdmin && <AdminControls index={this.props.index} toggleEdit={this.toggleEdit} />}
+
+        {this.props.showAdmin && <AdminControls index={this.props.index} toggleEdit={this.toggleEdit} recipe={this.props.recipe} removeRecipe={this.props.removeRecipe} editRecipe={this.props.editRecipe} />}
       </div>
     );
   }
@@ -78,10 +79,12 @@ class Recipe extends Component {
 
 Recipe.propTypes = {
   updateRecipe: PropTypes.func.isRequired,
+  removeRecipe: PropTypes.func.isRequired,
+  editRecipe: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({
   recipes: state.recipes.recipes
 });
 
-export default connect(mapStateToProps, { updateRecipe })(Recipe);
+export default connect(mapStateToProps, { updateRecipe, removeRecipe, editRecipe })(Recipe);
