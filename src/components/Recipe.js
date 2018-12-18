@@ -27,9 +27,8 @@ class Recipe extends Component {
   };
 
   onChange(event) {
-    // return this.setState({ ...this.state.recipe, [event.target.name]: event.target.value });
     const field = event.target.name;
-    const recipe = this.state.recipe;
+    const recipe = this.props.recipe;
     recipe[field] = event.target.value;
     return this.setState({ recipe: recipe });
   }
@@ -46,7 +45,7 @@ class Recipe extends Component {
         <div>
           <h2 className="title is-2">Editing {this.props.recipe.name}</h2>
           <EditRecipe
-            recipe={this.state.recipe}
+            recipe={this.props.recipe}
             handleSubmit={this.handleSubmit}
             onChange={this.onChange}
           />
