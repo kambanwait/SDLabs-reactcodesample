@@ -1,5 +1,4 @@
 import { FETCH_RECIPES, NEW_RECIPE, REMOVE_RECIPE } from '../actions/types';
-import { removeRecipe } from '../actions/recipeActions';
 
 const initialState = {
   recipes: []
