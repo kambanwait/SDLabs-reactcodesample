@@ -38,4 +38,10 @@ const EditRecipe = props => {
   );
 }
 
+EditRecipe.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  recipe: PropTypes.object.isRequired,
+}
+
 export default EditRecipe;
