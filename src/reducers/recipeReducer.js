@@ -1,4 +1,11 @@
-import { FETCH_RECIPES, NEW_RECIPE, REMOVE_RECIPE, EDIT_RECIPE, UPDATE_RECIPE, GET_SINGLE_RECIPE } from '../actions/types';
+import {
+  FETCH_RECIPES,
+  NEW_RECIPE,
+  REMOVE_RECIPE,
+  EDIT_RECIPE,
+  UPDATE_RECIPE,
+  GET_SINGLE_RECIPE
+} from '../actions/types';
 
 const initialState = {
   recipes: [],
