@@ -72,7 +72,7 @@ class Recipe extends Component {
 
         {!this.props.showAdmin && (
           <footer className="card-footer">
-            <Link to={`/recipe/${recipe.id}`} >
+            <Link to={`/recipe/${this.props.recipe.id}`} >
               <p className="card-footer-item">Read more</p>
             </Link>
           </footer>
