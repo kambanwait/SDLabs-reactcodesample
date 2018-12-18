@@ -28,6 +28,7 @@ class Recipes extends Component {
               key={index}
               removeRecipe={this.props.removeRecipe}
               updateRecipe={this.props.updateRecipe}
+              showAdmin={this.props.showAdmin}
             />
           ))
         }
