@@ -13,7 +13,7 @@ const Recipe = props => {
       <p>{props.recipe.steps}</p>
       {/* only show this if we're on admin page */}
       <div>
-        <button>Edit</button>
+        <button onClick={() => { props.updateRecipe(props.index) }}>Edit</button>
         <button onClick={() => { props.removeRecipe(props.recipe) }}>Remove</button>
       </div>
     </div>
