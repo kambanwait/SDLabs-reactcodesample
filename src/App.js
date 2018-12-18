@@ -17,11 +17,13 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Navigation />
-          <Switch>
-            <Route path="/" component={Home} exact showAdmin={false} />
-            <Route path="/admin" component={props => <Admin {...props} showAdmin="true" />} />
-            <Route component={Error} />
-          </Switch>
+          <section className="section">
+            <Switch>
+              <Route path="/" component={Home} exact showAdmin={false} />
+              <Route path="/admin" component={props => <Admin {...props} showAdmin="true" />} />
+              <Route component={Error} />
+            </Switch>
+          </section>
           <Footer />
         </div>
       </BrowserRouter>
