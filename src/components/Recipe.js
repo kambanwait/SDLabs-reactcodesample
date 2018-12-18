@@ -37,6 +37,7 @@ class Recipe extends Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.updateRecipe(this.state.recipe);
+    this.toggleEdit();
   }
 
   render() {
