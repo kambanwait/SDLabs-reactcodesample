@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchRecipes } from '../actions/recipeActions';
 import { loadState } from '../localStorage';
-import { Link } from 'react-router-dom';
 
 import Recipe from './Recipe'
 
@@ -19,18 +18,18 @@ class Recipes extends Component {
 
   render() {
     return (
-      <section className="columns is-multiline is-mobile">
+      <section className="columns is-multiline">
         {/* Loops through recipes array and pass data to component */}
         {
           this.props.recipes.map((recipe, index) => (
-            <Link to={`/recipe/${recipe.id}`} key={index} className="column is-one-third">
+            <article key={index} className={"column " + (this.props.showAdmin ? 'is-one-quarter' : 'is-one-third')}>
               <Recipe
                 recipe={recipe}
                 index={index}
                 key={index}
                 showAdmin={this.props.showAdmin}
               />
-            </Link>
+            </article>
           ))
         }
       </section >
