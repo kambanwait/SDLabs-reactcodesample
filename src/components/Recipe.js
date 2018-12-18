@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { updateRecipe, removeRecipe, editRecipe } from '../actions/recipeActions';
+import { Link } from 'react-router-dom';
 
 import AdminControls from './AdminControls';
 import EditRecipe from './EditRecipe';
@@ -42,14 +43,14 @@ class Recipe extends Component {
   render() {
     if (this.state.isEditing) {
       return (
-        <article className="column is-one-third">
+        <React.Fragment>
           <h3 className="title is-3">Editing {this.props.recipe.name}</h3>
           <EditRecipe
             recipe={this.props.recipe}
             handleSubmit={this.handleSubmit}
             onChange={this.onChange}
           />
-        </article>
+        </React.Fragment>
       )
     }
     return (
@@ -60,20 +61,22 @@ class Recipe extends Component {
 
         <div className="card-image">
           <figure className="image">
-            <img src={this.props.recipe.imageURL} alt="Placeholder image" />
+            <img src={this.props.recipe.imageURL || 'https://bulma.io/images/placeholders/128x128.png'} alt="Placeholder image" />
           </figure>
         </div>
         <div className="card-content">
           <div className="content">
-            <p>{this.props.recipe.description}</p>
-            <br />
-            <h5 className="title is-5">Ingredients</h5>
-            <p>{this.props.recipe.ingredients}</p>
-            <br />
-            <h5 className="title is-5">Steps</h5>
-            <p>{this.props.recipe.steps}</p>
+            <p>{this.props.recipe.description.substring(0, 90) + '...'}</p>
           </div>
         </div>
+
+        {!this.props.showAdmin && (
+          <footer className="card-footer">
+            <Link to={`/recipe/${recipe.id}`} >
+              <p className="card-footer-item">Read more</p>
+            </Link>
+          </footer>
+        )}
         {/* only show admin controls when we're on admin page */}
         {this.props.showAdmin && <AdminControls index={this.props.index} toggleEdit={this.toggleEdit} recipe={this.props.recipe} removeRecipe={this.props.removeRecipe} editRecipe={this.props.editRecipe} />}
       </div >
