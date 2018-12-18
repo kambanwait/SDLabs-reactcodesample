@@ -1,7 +1,7 @@
 {
-  "name": "sdlabsreactcodesample",
+  "name": "reactcodesample",
   "version": "1.0.0",
-  "description": "Kam Banwait code sample",
+  "description": "Kam Banwait React Code Sample",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kambanwait/SDLabs-reactcodesample.git"
+    "url": "git+https://github.com/kambanwait/react-code-sample.git"
   },
   "author": "Kam Banwait",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kambanwait/SDLabs-reactcodesample/issues"
+    "url": "https://github.com/kambanwait/react-code-sample.git/issues"
   },
-  "homepage": "https://github.com/kambanwait/SDLabs-reactcodesample#readme",
+  "homepage": "https://github.com/kambanwait/react-code-sample.git#readme",
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
