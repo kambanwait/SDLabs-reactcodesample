@@ -29,6 +29,12 @@ img {
   }
 }
 
+.card-image {
+  overflow: hidden;
+  max-height: 170px;
+  width: 100%;
+}
+
 .navbar-brand {
   min-height: 0;
 }
