@@ -38,7 +38,6 @@ export function editRecipe(state) {
   }
 }
 
-
 export function updateRecipe(state) {
   return function (dispatch) {
     dispatch({
