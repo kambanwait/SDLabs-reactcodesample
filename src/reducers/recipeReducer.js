@@ -24,15 +24,26 @@ export default function (state = initialState, action) {
         recipes: filteredRecipes
       }
 
-    case UPDATE_RECIPE:
-      return {
-      }
 
     case EDIT_RECIPE:
       const recipeToEdit = state.recipes[action.payload];
       return {
         ...state,
         editing: recipeToEdit
+      }
+
+    case UPDATE_RECIPE:
+      // iterate through state.recipes and match ID's
+      const updatedItems = state.recipes.map(recipe => {
+        if (recipe.id === action.payload.id) {
+          return { ...recipe, ...action.payload }
+        }
+        return recipe
+      })
+
+      return {
+        ...state,
+        recipes: updatedItems
       }
 
     default:
