@@ -44,7 +44,7 @@ class Recipe extends Component {
     if (this.state.isEditing) {
       return (
         <React.Fragment>
-          <h3 className="title is-3">Editing {this.props.recipe.name}</h3>
+          <h4 className="title is-4">Editing {this.props.recipe.name}</h4>
           <EditRecipe
             recipe={this.props.recipe}
             handleSubmit={this.handleSubmit}

@@ -33,7 +33,7 @@ const EditRecipe = props => {
         </div>
       </div>
 
-      <button disabled={!props.recipe.steps} type="submit" className="button" >Update recipe</button>
+      <button disabled={!props.recipe.steps} type="submit" className="button is-dark" >Update recipe</button>
     </form>
   );
 }

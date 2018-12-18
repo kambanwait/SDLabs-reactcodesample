@@ -22,7 +22,7 @@ class Recipes extends Component {
         {/* Loops through recipes array and pass data to component */}
         {
           this.props.recipes.map((recipe, index) => (
-            <article key={index} className={"column " + (this.props.showAdmin ? 'is-one-quarter' : 'is-one-third')}>
+            <article key={index} className={"column " + (this.props.showAdmin ? 'is-desktop is-half-tablet ' : 'is-one-third is-one-quarter-desktop')}>
               <Recipe
                 recipe={recipe}
                 index={index}

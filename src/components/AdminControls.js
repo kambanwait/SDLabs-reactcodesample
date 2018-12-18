@@ -7,7 +7,7 @@ const AdminControls = (props) => {
         <button className="button is-primary" onClick={() => { props.toggleEdit(props.index) }}>Edit</button>
       </p>
       <p className="card-footer-item">
-        <button className="button is-danger" onClick={() => { props.removeRecipe(props.recipe) }}>Remove</button>
+        <button className="button is-warning" onClick={() => { props.removeRecipe(props.recipe) }}>Remove</button>
       </p>
     </footer>
   );
