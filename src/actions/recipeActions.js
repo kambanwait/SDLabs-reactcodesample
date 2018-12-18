@@ -1,4 +1,4 @@
-import { FETCH_RECIPES, NEW_RECIPE, REMOVE_RECIPE, UPDATE_RECIPE } from './types';
+import { FETCH_RECIPES, NEW_RECIPE, REMOVE_RECIPE, EDIT_RECIPE, UPDATE_RECIPE } from './types';
 
 export function fetchRecipes() {
   return function (dispatch) {
@@ -28,6 +28,16 @@ export function removeRecipe(state) {
     });
   }
 }
+
+export function editRecipe(state) {
+  return function (dispatch) {
+    dispatch({
+      type: EDIT_RECIPE,
+      payload: state
+    });
+  }
+}
+
 
 export function updateRecipe(state) {
   return function (dispatch) {

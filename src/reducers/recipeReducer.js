@@ -1,7 +1,8 @@
-import { FETCH_RECIPES, NEW_RECIPE, REMOVE_RECIPE } from '../actions/types';
+import { FETCH_RECIPES, NEW_RECIPE, REMOVE_RECIPE, EDIT_RECIPE, UPDATE_RECIPE } from '../actions/types';
 
 const initialState = {
-  recipes: []
+  recipes: [],
+  editing: {}
 }
 
 export default function (state = initialState, action) {
@@ -21,6 +22,17 @@ export default function (state = initialState, action) {
       return {
         ...state,
         recipes: filteredRecipes
+      }
+
+    case UPDATE_RECIPE:
+      return {
+      }
+
+    case EDIT_RECIPE:
+      const recipeToEdit = state.recipes[action.payload];
+      return {
+        ...state,
+        editing: recipeToEdit
       }
 
     default:
