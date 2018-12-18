@@ -19,3 +19,12 @@ export function createRecipe(state) {
     });
   }
 }
+
+export function removeRecipe(state) {
+  return function (dispatch) {
+    dispatch({
+      type: REMOVE_RECIPE,
+      payload: state
+    });
+  }
+}
