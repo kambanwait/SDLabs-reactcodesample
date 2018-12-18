@@ -1,4 +1,5 @@
 import { FETCH_RECIPES, NEW_RECIPE, REMOVE_RECIPE } from '../actions/types';
+import { removeRecipe } from '../actions/recipeActions';
 
 const initialState = {
   recipes: []
@@ -7,7 +8,6 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case FETCH_RECIPES:
-      console.log(action.payload)
       return { ...state, recipes: action.payload }
 
     case NEW_RECIPE:
@@ -17,8 +17,12 @@ export default function (state = initialState, action) {
       }
 
     case REMOVE_RECIPE:
-      const firstRecipe = state.indexOf(action.payload)
-      return state.filter((item, index) => index != firstRecipe)
+      const recipeToRemove = action.payload.id;
+      const recipesUpdated = state.recipes.filter((recipe) => recipe.id != recipeToRemove);
+      return {
+        ...state,
+        recipes: recipesUpdated
+      }
 
     default:
       return state;
