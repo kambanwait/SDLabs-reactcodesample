@@ -17,10 +17,10 @@ export default function (state = initialState, action) {
 
     case REMOVE_RECIPE:
       const recipeToRemove = action.payload.id;
-      const recipesUpdated = state.recipes.filter((recipe) => recipe.id != recipeToRemove);
+      const filteredRecipes = state.recipes.filter((recipe) => recipe.id != recipeToRemove);
       return {
         ...state,
-        recipes: recipesUpdated
+        recipes: filteredRecipes
       }
 
     default:
