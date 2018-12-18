@@ -1,5 +1,7 @@
 import React from "react";
 
+import AdminControls from './AdminControls';
+
 const Recipe = props => {
   return (
     <div>
@@ -12,10 +14,9 @@ const Recipe = props => {
       {/* steps */}
       <p>{props.recipe.steps}</p>
       {/* only show this if we're on admin page */}
-      <div>
-        <button onClick={() => { props.updateRecipe(props.index) }}>Edit</button>
-        <button onClick={() => { props.removeRecipe(props.recipe) }}>Remove</button>
-      </div>
+      <br />
+      {/* only show admin controls when we're on admin page */}
+      {props.showAdmin && <AdminControls />}
     </div>
   )
 };

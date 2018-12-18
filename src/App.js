@@ -17,8 +17,8 @@ class App extends Component {
         <div>
           <Navigation />
           <Switch>
-            <Route path="/" component={Home} exact />
-            <Route path="/admin" component={Admin} />
+            <Route path="/" component={Home} exact showAdmin={false} />
+            <Route path="/admin" component={props => <Admin {...props} showAdmin="true" />} />
             <Route component={Error} />
           </Switch>
         </div>
