@@ -6,7 +6,7 @@ const Navigation = () => {
     <nav className="navbar container is-fluid level is-primary" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <NavLink className="navbar-item header-logo" to="/">
-          <img src="images/cook.svg" width="112" height="28" />
+          <img src="/images/cook.svg" width="112" height="28" />
           <p className="title is-4">Recipe Box</p>
         </NavLink>
 
