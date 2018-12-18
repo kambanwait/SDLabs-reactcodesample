@@ -8,6 +8,7 @@ const uuidv4 = require('uuid/v4')
 const initialState = {
   id: uuidv4(),
   name: '',
+  imageURL: 'https://bulma.io/images/placeholders/128x128.png',
   description: '',
   ingredients: '',
   steps: ''
@@ -47,6 +48,13 @@ class NewRecipe extends Component {
           </div>
 
           <div className="field">
+            <label className="label">Image</label>
+            <div className="control">
+              <input className="input" type="text" placeholder="http://www.imageurl.com" name="imageURL" value={this.state.imageURL} />
+            </div>
+          </div>
+
+          <div className="field">
             <label className="label">Description:</label>
             <div className="control">
               <input className="input" type="text" placeholder="Description" name="description" onChange={this.onChange} value={this.state.description} />
@@ -67,7 +75,7 @@ class NewRecipe extends Component {
             </div>
           </div>
 
-          <button disabled={!this.state.steps} type="submit" className="button" >Add new recipe</button>
+          <button disabled={!this.state.steps} type="submit" className="button is-primary" >Add new recipe</button>
         </form>
       </section>
     );
