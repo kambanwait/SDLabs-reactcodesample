@@ -4,10 +4,10 @@ const AdminControls = (props) => {
   return (
     <footer className="card-footer">
       <p className="card-footer-item">
-        <a className="button is-primary" onClick={() => { props.toggleEdit(props.index) }}>Edit</a>
+        <button className="button is-primary" onClick={() => { props.toggleEdit(props.index) }}>Edit</button>
       </p>
       <p className="card-footer-item">
-        <a className="button is-danger" onClick={() => { props.removeRecipe(props.recipe) }}>Remove</a>
+        <button className="button is-danger" onClick={() => { props.removeRecipe(props.recipe) }}>Remove</button>
       </p>
     </footer>
   );
