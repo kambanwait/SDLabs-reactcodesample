@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchRecipes, removeRecipe } from '../actions/recipeActions';
+import { fetchRecipes, removeRecipe, updateRecipe } from '../actions/recipeActions';
 import { loadState } from '../localStorage';
 
 import Recipe from './Recipe'
@@ -22,7 +22,13 @@ class Recipes extends Component {
         {/* Loops through recipes array and pass data to component */}
         {
           this.props.recipes.map((recipe, index) => (
-            <Recipe recipe={recipe} key={index} removeRecipe={this.props.removeRecipe} />
+            <Recipe
+              recipe={recipe}
+              index={index}
+              key={index}
+              removeRecipe={this.props.removeRecipe}
+              updateRecipe={this.props.updateRecipe}
+            />
           ))
         }
       </section >
@@ -33,6 +39,7 @@ class Recipes extends Component {
 Recipes.propTypes = {
   fetchRecipes: PropTypes.func.isRequired,
   removeRecipe: PropTypes.func.isRequired,
+  updateRecipe: PropTypes.func.isRequired,
   recipes: PropTypes.array.isRequired
 }
 
@@ -40,4 +47,4 @@ const mapStateToProps = state => ({
   recipes: state.recipes.recipes
 });
 
-export default connect(mapStateToProps, { fetchRecipes, removeRecipe })(Recipes);
+export default connect(mapStateToProps, { fetchRecipes, removeRecipe, updateRecipe })(Recipes);
