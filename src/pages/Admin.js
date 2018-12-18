@@ -6,7 +6,7 @@ import NewRecipe from '../components/NewRecipe';
 const Admin = props => {
   return (
     <React.Fragment >
-      <section className="container">
+      <section className="container is-fluid">
         <h2 className="title is-2">Admin</h2>
         <hr />
         <NewRecipe />
