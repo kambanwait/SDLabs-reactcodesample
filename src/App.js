@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 require('./mystyles.scss');
 
 import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
 import Error from './pages/Error';
@@ -21,6 +22,7 @@ class App extends Component {
             <Route path="/admin" component={props => <Admin {...props} showAdmin="true" />} />
             <Route component={Error} />
           </Switch>
+          <Footer />
         </div>
       </BrowserRouter>
     );
