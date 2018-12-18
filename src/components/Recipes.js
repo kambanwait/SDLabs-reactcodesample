@@ -18,7 +18,7 @@ class Recipes extends Component {
 
   render() {
     return (
-      <section>
+      <section className="columns is-multiline is-mobile">
         {/* Loops through recipes array and pass data to component */}
         {
           this.props.recipes.map((recipe, index) => (

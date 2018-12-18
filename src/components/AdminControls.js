@@ -2,12 +2,14 @@ import React from 'react';
 
 const AdminControls = (props) => {
   return (
-    <div>
-      <small>Admin control: </small>
-      <button onClick={() => { props.toggleEdit(props.index) }}>Edit</button>
-      <button onClick={() => { props.removeRecipe(props.recipe) }}>Remove</button>
-      <br />
-    </div>
+    <footer className="card-footer">
+      <p className="card-footer-item">
+        <a className="button is-primary" onClick={() => { props.toggleEdit(props.index) }}>Edit</a>
+      </p>
+      <p className="card-footer-item">
+        <a className="button is-danger" onClick={() => { props.removeRecipe(props.recipe) }}>Remove</a>
+      </p>
+    </footer>
   );
 }
 

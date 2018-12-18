@@ -42,37 +42,43 @@ class Recipe extends Component {
   render() {
     if (this.state.isEditing) {
       return (
-        <div>
-          <h2 className="title is-2">Editing {this.props.recipe.name}</h2>
+        <article className="column is-one-third">
+          <h3 className="title is-3">Editing {this.props.recipe.name}</h3>
           <EditRecipe
             recipe={this.props.recipe}
             handleSubmit={this.handleSubmit}
             onChange={this.onChange}
           />
-        </div>
+        </article>
       )
     }
     return (
-      <div>
-        {/* name */}
-        <h3 className="title is-3">{this.props.recipe.name}</h3>
-        {/* description */}
-        <h5 className="title is-5">Description</h5>
-        <p>{this.props.recipe.description}</p>
-        <br />
-        {/* ingredients */}
-        <h5 className="title is-5">Ingredients</h5>
-        <p>{this.props.recipe.ingredients}</p>
-        <br />
-        {/* steps */}
-        <h5 className="title is-5">Steps</h5>
-        <p>{this.props.recipe.steps}</p>
-        {/* only show this if we're on admin page */}
-        <br />
-        {/* only show admin controls when we're on admin page */}
+      <article className="column is-one-third">
+        <div className="card">
+          <header className="card-header">
+            <p className="card-header-title">{this.props.recipe.name}</p>
+          </header>
 
-        {this.props.showAdmin && <AdminControls index={this.props.index} toggleEdit={this.toggleEdit} recipe={this.props.recipe} removeRecipe={this.props.removeRecipe} editRecipe={this.props.editRecipe} />}
-      </div>
+          <div className="card-image">
+            <figure className="image">
+              <img src={this.props.recipe.imageURL} alt="Placeholder image" />
+            </figure>
+          </div>
+          <div className="card-content">
+            <div className="content">
+              <p>{this.props.recipe.description}</p>
+              <br />
+              <h5 className="title is-5">Ingredients</h5>
+              <p>{this.props.recipe.ingredients}</p>
+              <br />
+              <h5 className="title is-5">Steps</h5>
+              <p>{this.props.recipe.steps}</p>
+            </div>
+          </div>
+          {/* only show admin controls when we're on admin page */}
+          {this.props.showAdmin && <AdminControls index={this.props.index} toggleEdit={this.toggleEdit} recipe={this.props.recipe} removeRecipe={this.props.removeRecipe} editRecipe={this.props.editRecipe} />}
+        </div >
+      </article>
     );
   }
 }
