@@ -1,8 +1,9 @@
-import { FETCH_RECIPES, NEW_RECIPE, REMOVE_RECIPE, EDIT_RECIPE, UPDATE_RECIPE } from '../actions/types';
+import { FETCH_RECIPES, NEW_RECIPE, REMOVE_RECIPE, EDIT_RECIPE, UPDATE_RECIPE, GET_SINGLE_RECIPE } from '../actions/types';
 
 const initialState = {
   recipes: [],
-  editing: {}
+  editing: {},
+  singleRecipe: {}
 }
 
 export default function (state = initialState, action) {
@@ -46,6 +47,18 @@ export default function (state = initialState, action) {
         recipes: updatedItems
       }
 
+    case GET_SINGLE_RECIPE:
+
+      let recipeIDToShow = action.payload;
+      let singleRecipe = state.recipes.filter(function (recipe) {
+        return recipe.id == recipeIDToShow
+      });
+      return {
+        ...state,
+        singleRecipe: singleRecipe[0]
+      }
+
+    // NO MORE CASE
     default:
       return state;
   }
